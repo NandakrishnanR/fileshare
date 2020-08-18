@@ -12,7 +12,7 @@ router.get('/read',(req,res,next)=>{
     res.render('read',{
         data:data
     });
-    console.log(data.message);
+    console.log(data);
 });
 
 module.exports = router;

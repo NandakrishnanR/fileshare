@@ -14,7 +14,8 @@ router.get('/send',(req,res,next)=>{
 
 router.post('/send',(req,res,next)=>{
     data.push({
-        message:req.body.message
+        message:req.body.message,
+        key:req.body.key
     });
     // console.log(data);
     res.redirect('/success');
