@@ -1,4 +1,10 @@
 title #{docTitle}
 body
+    form(method="post")                         
+        label(for="key") Enter key
+        input(type="text" name='inputkey')
+            
+        button(type="submit") Submit
+
     each d in data
         p the message is #{d.message}

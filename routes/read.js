@@ -7,9 +7,16 @@ const sendData = require('./send');
 
 const router = express.Router();
 
+const data=sendData.data;
+
 router.get('/', (req, res, next) => {
-  const data=sendData.data;
   res.render('read',{data:data,docTitle:'read'});
 });
+
+router.post('/',(req,res,next)=>{       //ongoing
+  if (data.key==req.body.inputkey){
+    console.log(data.message)
+  }
+})
 
 module.exports = router;
