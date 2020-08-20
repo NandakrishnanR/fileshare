@@ -9,7 +9,8 @@ const router = express.Router();
 const data = [];
 
 router.get('/send', (req, res, next) => {
-  res.sendFile(path.join(rootDir, 'views', 'send.html'));
+  // res.sendFile(path.join(rootDir, 'views', 'send.html'));
+  res.render('send',{docTitle:'send'});
 });
 
 router.post('/send', (req, res, next) => {
@@ -17,7 +18,7 @@ router.post('/send', (req, res, next) => {
     message: req.body.message,
     key:req.body.key 
     });
-    console.log(req.body)
+    // console.log(req.body)
   res.redirect('/');
 });
 
