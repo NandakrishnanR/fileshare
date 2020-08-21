@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const sendData = require('./routes/send');
 const readRoutes = require('./routes/read');
-const loginRoutes = require('./routes/login');
+const loginData = require('./routes/login');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.set('views','views');
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(sendData.routes);
-app.use(loginRoutes);
+app.use(loginData.routes);
 app.use(readRoutes);
 
 const port=process.env.PORT||3000;
