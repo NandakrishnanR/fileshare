@@ -11,22 +11,23 @@ const data =sendData.data;
 var d1;
 
 router.get('/login',(req, res, next)=>{
-    res.render('login')
+    res.render('login',{docTitle:'login'})
 });
+
+var msg;
 
 router.post('/login',(req,res,next)=>{
     const k=req.body.inputkey;
     for(i in data) {
         if(data[i].key==k){
             console.log(data[i]);
-            d1=data[i];
+            const msg=data[i].message;
+            // console.log(msg)
             res.redirect('/')
         }
-        else{
-            d1=[]
-        }
+        
     }
 })
 
 exports.routes=router;
-exports.data=d1;
+exports.msg=msg;

@@ -11,11 +11,10 @@ const router = express.Router();
 // const data=sendData.data;
 
 router.get('/', (req, res, next) => {
-  const data = loginData.data
-  console.log(data)
-  res.render('read',{data:data,docTitle:'read'});
+  const msg = loginData.msg
+  console.log(msg)
+  res.render('read',{msg:msg,docTitle:'read'});
 });
-
 
 
 module.exports = router;
