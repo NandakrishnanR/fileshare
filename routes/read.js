@@ -9,12 +9,11 @@ const loginData=require('./login');
 const router = express.Router();
 
 // const data=sendData.data;
-const data = loginData.data
-console.log(loginData.data);
 
 router.get('/', (req, res, next) => {
-  // res.render('read',{data:data,docTitle:'read'});
-  console.log(data);
+  const data = loginData.data
+  console.log(data)
+  res.render('read',{data:data,docTitle:'read'});
 });
 
 

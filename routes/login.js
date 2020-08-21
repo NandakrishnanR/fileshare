@@ -8,24 +8,25 @@ const router=express.Router();
 
 const data =sendData.data;
 
+var d1;
+
 router.get('/login',(req, res, next)=>{
     res.render('login')
 });
 
 router.post('/login',(req,res,next)=>{
     const k=req.body.inputkey;
-    // console.log(k)
     for(i in data) {
         if(data[i].key==k){
             console.log(data[i]);
-            exports.data=data[i];
+            d1=data[i];
             res.redirect('/')
         }
         else{
-            res.redirect('/notfound');
+            d1=[]
         }
     }
 })
 
-
 exports.routes=router;
+exports.data=d1;
