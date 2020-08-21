@@ -17,7 +17,7 @@ router.post('/send', (req, res, next) => {
     message: req.body.message,
     key:req.body.key 
     });
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 exports.routes = router;
